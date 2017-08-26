@@ -1,0 +1,100 @@
+{
+  "name": "ts-mastering",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "./node_modules/.bin/webpack-dev-server",
+    "start:storybook": "start-storybook -p 9001 -c .storybook",
+    "build": "./node_modules/.bin/webpack -p",
+    "build:storybook": "build-storybook -c .storybook -o .out",
+    "test": "./node_modules/.bin/jest --no-cache --runInBand",
+    "test:watch": "./node_modules/.bin/jest --watch"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "mapCoverage": true,
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx,js,jsx}",
+      "!src/**/*.stories.{ts,tsx}"
+    ],
+    "coveragePathIgnorePatterns": [
+      "src/index.tsx"
+    ],
+    "coverageDirectory": "<rootDir>/__coverage__",
+    "coverageReporters": [
+      "text",
+      "html",
+      "lcov"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "d3": "^4.10.0",
+    "immutability-helper": "^2.3.1",
+    "js-cookie": "^2.1.4",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-intl": "^2.3.0",
+    "react-router-dom": "^4.1.2",
+    "react-transition-group": "^2.2.0",
+    "redux": "^3.7.2",
+    "styled-components": "^2.1.1",
+    "typescript": "^2.4.2"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.1.9",
+    "@storybook/addon-knobs": "^3.1.9",
+    "@storybook/react": "^3.1.9",
+    "@types/axios": "^0.14.0",
+    "@types/core-js": "^0.9.42",
+    "@types/d3": "^4.10.0",
+    "@types/enzyme": "^2.8.4",
+    "@types/immutability-helper": "^2.0.15",
+    "@types/jest": "^20.0.5",
+    "@types/js-cookie": "^2.0.28",
+    "@types/lodash": "^4.14.73",
+    "@types/moment": "^2.13.0",
+    "@types/node": "^8.0.17",
+    "@types/react": "15.6.1",
+    "@types/react-dom": "^15.5.1",
+    "@types/react-intl": "^2.3.1",
+    "@types/react-router-dom": "^4.0.7",
+    "@types/react-test-renderer": "^15.5.2",
+    "@types/react-transition-group": "^2.0.2",
+    "@types/redux": "^3.6.0",
+    "@types/storybook__addon-actions": "^3.0.1",
+    "@types/storybook__addon-knobs": "^3.0.1",
+    "@types/storybook__react": "^3.0.2",
+    "awesome-typescript-loader": "^3.2.2",
+    "coveralls": "^2.13.1",
+    "css-loader": "^0.28.4",
+    "enzyme": "^2.9.1",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^1.0.0",
+    "html-webpack-plugin": "^2.29.0",
+    "jest": "^20.0.4",
+    "json-loader": "^0.5.7",
+    "react-test-renderer": "^15.6.1",
+    "source-map-loader": "^0.2.1",
+    "style-loader": "^0.18.2",
+    "ts-jest": "^20.0.7",
+    "tslint": "^5.5.0",
+    "tslint-react": "^3.1.0",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1",
+    "webpack-merge": "^4.1.0"
+  }
+}

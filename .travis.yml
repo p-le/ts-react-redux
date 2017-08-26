@@ -1,0 +1,27 @@
+language: node_js
+node_js:
+  - 7
+cache: yarn
+before_script:
+  - yarn install
+script:
+  - yarn test
+after_success:
+  - cat __coverage__/lcov.info | ./node_modules/.bin/coveralls
+  - yarn run build
+  - yarn run build:storybook
+
+deploy:
+  - provider: pages
+    local_dir: dist
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    on:
+      branch: master
+  - provider: pages
+    repo: p-le/ts-react-tdd-storybook
+    local_dir: .out
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    on:
+      branch: master
